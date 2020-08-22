@@ -1,0 +1,24 @@
+{
+
+  // Android Phone emulator
+  /*"MobilePlatform": "Android",
+  "AndroidConnection": "http://127.0.0.1:4723/wd/hub",
+  "AndroidPlatformVersion": "9",
+  "AndroidDeviceName": "Pixel_2_XL_API_26",
+  "AndroidDeviceUdid": "emulator-5554"*/
+
+  "Android_tablet_emulator": {
+    "MobilePlatform": "Android",
+    "AndroidConnection": "http://127.0.0.1:4723/wd/hub",
+    "AndroidPlatformVersion": "9",
+    "AndroidDeviceName": "Nexus_10_Android9",
+    "AndroidDeviceUdid": "emulator-5554"
+  },
+
+  "App": "C:\\SRC\\vinted-pl_20.15.2.0.apk",
+  "MobilePlatform": "Android",
+  "AndroidConnection": "http://127.0.0.1:4723/wd/hub",
+  "AndroidPlatformVersion": "10",
+  "AndroidDeviceName": "R58M33HBPNF",
+  "AndroidDeviceUdid": "samsung SM-G975F"
+}
