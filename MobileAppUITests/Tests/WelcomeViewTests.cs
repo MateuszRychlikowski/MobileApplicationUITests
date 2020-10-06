@@ -15,5 +15,11 @@ namespace MobileAppUITests.Tests
             Thread.Sleep(1000);
             Assert.Pass();
         }
+        public void GivenUserIsOnWelcomePageWhenClickRegisterButton()
+        {
+            new WelcomViewPageObject(androidDriver).ClickSignInButton();
+            Thread.Sleep(1000);
+            Assert.Pass();
+        }
     }
 }

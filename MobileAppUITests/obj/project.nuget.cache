@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bkTk9lZJHGJpggp0cGaASSUoQRj8YmZ4XXJCDnlhSLUbDH/32RGZSgnLj5gNgvM1CSndGk/GeFhYUl7l99ttzA==",
+  "dgSpecHash": "M7p7C5IHrAsMinFdb/wHnIRF2BH1ohnGHlYucCb7XinEZZB0lf30kcUJcYSqSfEb8xMX0wyWsbyj8HWnepbX8A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mateusz\\source\\repos\\MobileApplicationUITests\\MobileAppUITests\\MobileAppUITests.csproj",
+  "projectFilePath": "C:\\Users\\Mateusz\\Source\\Repos\\MobileApplicationUITests\\MobileAppUITests\\MobileAppUITests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mateusz\\.nuget\\packages\\appium.webdriver\\4.1.1\\appium.webdriver.4.1.1.nupkg.sha512",
     "C:\\Users\\Mateusz\\.nuget\\packages\\bodi\\1.4.1\\bodi.1.4.1.nupkg.sha512",
