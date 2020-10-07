@@ -1,23 +1,17 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
+using System.IO;
 using Microsoft.Extensions.Configuration;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
-using OpenQA.Selenium.Appium.Windows;
-using OpenQA.Selenium.Remote;
+using OpenQA.Selenium.Appium.Service;
 
 namespace MobileAppUITests.BaseCore
 {
     public class DriverFactory
     {
         private static IConfiguration configuration;
-        
-        public DriverFactory()
-        {
-            var builder = new ConfigurationBuilder().AddJsonFile("testConfig.json", true);
-
-            configuration = builder.Build();
-        }
+        private static IConfigurationBuilder driverConfig;
+        private static IConfigurationBuilder serviceConfig;
 
         private static string GetConfigurationProperty(string property)
         {
@@ -26,18 +20,33 @@ namespace MobileAppUITests.BaseCore
                 : configuration[property];
         }
 
-        public AndroidDriver<AndroidElement> CreateAndroidDriver()
+        public AndroidDriver<AndroidElement> CreateAndroidDriverForService(AppiumLocalService appiumService)
         {
+            driverConfig = new ConfigurationBuilder().AddJsonFile("driverConfig.json", true);
+            configuration =driverConfig.Build();
             AppiumOptions desiredCapabilities = new AppiumOptions();
             desiredCapabilities.AddAdditionalCapability("app", GetConfigurationProperty("App"));
             desiredCapabilities.AddAdditionalCapability("platformName", GetConfigurationProperty("MobilePlatform"));
             desiredCapabilities.AddAdditionalCapability("deviceName", GetConfigurationProperty("AndroidDeviceName"));
             
             AndroidDriver<AndroidElement> androidDriver= new AndroidDriver<AndroidElement>
-                (new Uri(GetConfigurationProperty("AndroidConnection")), desiredCapabilities);
+                (appiumService,desiredCapabilities);
             androidDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(60);
 
             return androidDriver;
+        }
+
+        public AppiumLocalService CreateAppiumLocalService()
+        {
+            serviceConfig = new ConfigurationBuilder().AddJsonFile("serviceConfig.json", true);
+            configuration = serviceConfig.Build();
+
+            return new AppiumServiceBuilder()
+                .WithIPAddress(GetConfigurationProperty("IpAddress"))
+                .UsingPort(Int32.Parse(GetConfigurationProperty("Port")))
+                .WithLogFile(new FileInfo(GetConfigurationProperty("LogFilePath")))
+                .Build();
+
         }
     }
 }

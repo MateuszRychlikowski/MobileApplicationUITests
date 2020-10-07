@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\MobileAppUITests",
+    "\\MobileAppUITests\\Tests"
   ],
+  "SelectedNode": "\\MobileAppUITests\\MobileAppUITests.sln",
   "PreviewInSolutionExplorer": false
 }

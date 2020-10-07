@@ -15,7 +15,7 @@
     "AndroidDeviceUdid": "emulator-5554"
   },
 
-  "App": "C:\\SRC\\vinted-pl_20.15.2.0.apk",
+  "App": "C:\\SRC\\vinted-pl_20.17.4.0.apk",
   "MobilePlatform": "Android",
   "AndroidConnection": "http://127.0.0.1:4723/wd/hub",
   "AndroidPlatformVersion": "10",

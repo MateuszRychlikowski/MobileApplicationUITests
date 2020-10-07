@@ -11,13 +11,15 @@ namespace MobileAppUITests.Tests
         [Test]
         public void GivenUserIsOnWelcomePageWhenClickSignInButton()
         {
-            new WelcomViewPageObject(androidDriver).ClickSignInButton();
+            new WelcomViewPageObject(AndroidDriver).ClickSignInButton();
             Thread.Sleep(1000);
             Assert.Pass();
         }
+
+        [Test]
         public void GivenUserIsOnWelcomePageWhenClickRegisterButton()
         {
-            new WelcomViewPageObject(androidDriver).ClickSignInButton();
+            new WelcomViewPageObject(AndroidDriver).ClickSignInButton();
             Thread.Sleep(1000);
             Assert.Pass();
         }

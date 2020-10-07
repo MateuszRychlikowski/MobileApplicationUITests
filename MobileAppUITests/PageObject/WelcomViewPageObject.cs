@@ -1,9 +1,6 @@
 ﻿using MobileAppUITests.BaseCore;
 using MobileAppUITests.Selectors;
 using OpenQA.Selenium.Appium.Android;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MobileAppUITests.PageObject
 {

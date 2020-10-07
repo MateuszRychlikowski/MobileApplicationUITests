@@ -1,42 +1,42 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium.Appium.Android;
-using System;
-using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
+using OpenQA.Selenium.Appium.Service;
 
 namespace MobileAppUITests.BaseCore
 {
     public class BaseTest
     {
-        protected AndroidDriver<AndroidElement> androidDriver { get; set; }
+        protected AndroidDriver<AndroidElement> AndroidDriver { get; set; }
+        protected AppiumLocalService AppiumService { get; set; }
 
         [OneTimeSetUp]
         public void OneTimeSetup()
         {
 
+            AppiumService = new DriverFactory().CreateAppiumLocalService();
+            AppiumService.Start();
         }
         [SetUp]
         public void SetUp()
         {
-            if (androidDriver != null)
+            if (AndroidDriver != null)
             {
-                androidDriver.Quit();
+                AndroidDriver.Quit();
             }
-            androidDriver = new DriverFactory().CreateAndroidDriver();
+            AndroidDriver = new DriverFactory().CreateAndroidDriverForService(AppiumService);
         }
 
         [TearDown]
         public void TearDown()
         {
-            androidDriver.CloseApp();
-            androidDriver.Quit();
+            AndroidDriver.CloseApp();
+            AndroidDriver.Quit();
         }
 
         [OneTimeTearDown]
         public void OneTimeTearDown()
         {
-            
+            AppiumService.Dispose();
         }
     }
 }

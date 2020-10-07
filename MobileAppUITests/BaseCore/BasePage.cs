@@ -1,8 +1,4 @@
-﻿using OpenQA.Selenium.Appium;
-using OpenQA.Selenium.Appium.Android;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using OpenQA.Selenium.Appium.Android;
 
 namespace MobileAppUITests.BaseCore
 {
@@ -13,6 +9,7 @@ namespace MobileAppUITests.BaseCore
         {
             AndroidDriver = androidDriver;
         }
+
 
         public void ClickElementById(string id)
         {
